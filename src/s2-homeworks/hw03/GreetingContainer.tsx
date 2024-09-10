@@ -40,9 +40,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({ users, addUse
     const [error, setError] = useState<string | null>(null) // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+        setError(null)
         setName(e.currentTarget.value)
-
-        error && setError('')
     }
 
     const addUser = () => {
