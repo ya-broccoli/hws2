@@ -11,17 +11,17 @@ type GreetingContainerPropsType = {
 
 export const pureAddUser = (name: string, setError: (error: string) => void, setName: (name: string) => void, addUserCallback: (name: string) => void) => {
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    if (name.trim() === '') {
+    if (!name.trim()) {
         setError('Ошибка! Введите имя!')
     } else {
-        addUserCallback(name.trim())
+        addUserCallback(name)
         setName('')
     }
 }
 
 export const pureOnBlur = (name: string, setError: (error: string) => void) => {
     // если имя пустое - показать ошибку
-    if (name.trim() === '') {
+    if (!name.trim()) {
         setError('Ошибка! Введите имя!')
     }
 }
@@ -37,14 +37,13 @@ export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => v
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => {
     // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
-    const [error, setError] = useState<string | null>(null) // need to fix any
+    const [error, setError] = useState<string | null>('') // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value)
 
-        if(e.currentTarget.value.trim() !== '') {
-            setError('')
-        }
+        error && setError('')
+
     }
 
     const addUser = () => {
@@ -60,7 +59,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     }
 
     const totalUsers = users.length
-    const lastUserName = users.length > 0 ? users[users.length - 1].name : ''
+    const lastUserName = users[users.length - 1]?.name
 
     return (
         <Greeting
