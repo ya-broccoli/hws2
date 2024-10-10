@@ -3,7 +3,7 @@
     display: flex;
     gap: 44px;
     font-family: Montserrat, sans-serif;
-    margin: 56px 0 34px;
+    margin-top: 56px;
 }
 
 .textarea {
