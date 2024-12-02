@@ -1,3 +1,19 @@
 .loader {
-    /*свг и/или анимация*/
+    width: 50px; /* Размер круга */
+    height: 50px;
+    border-radius: 50%; /* Круглая форма */
+    background: conic-gradient(
+            from 0deg,
+            rgba(108, 99, 255, 1) 10%,
+            rgba(108, 99, 255, 0.2) 80%,
+            rgba(108, 99, 255, 0) 100%
+    ); /* Градиент */
+    mask: radial-gradient(circle, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 70%);
+    animation: spin 1.5s linear infinite; /* Анимация вращения */
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg); /* Полный оборот */
+    }
 }

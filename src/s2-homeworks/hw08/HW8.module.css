@@ -5,15 +5,24 @@
 }
 
 .users {
+    width: 100%;
 }
 
 .buttonsContainer {
+    display: flex;
+    justify-content: right;
+    gap: 12px;
+    margin-bottom: 18px;
 }
 
 .container {
+    width: 606px;
 }
 
 .thead {
+    width: 250px;
+    padding: 10px 17px;
+    background-color: #E5E5E5;
 }
 
 .nameCol {
