@@ -39,7 +39,7 @@ const HW13 = () => {
                 setIsLoading(false)
                 setCode('Код 200!')
                 setImage(success200)
-                setText('...всё ок')
+                setText('...всё ок)')
                 setInfo('код 200 - обычно означает что скорее всего всё ок)')
             })
             .catch((e) => {
@@ -47,7 +47,7 @@ const HW13 = () => {
                 if(x === false) {
                     setCode('Ошибка 500!')
                     setImage(error500)
-                    setText('имитация ошибки на сервере')
+                    setText('эмитация ошибки на сервере')
                     setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
                 }
                 if(x === undefined) {
