@@ -37,19 +37,21 @@ const HW14 = () => {
                 // делает студент
 
                 // сохранить пришедшие данные
-
+                if(res?.data) {
+                    setTechs(res.data.techs)
+                    setLoading(false)
+                }
                 //
             })
     }
 
     const onChangeText = (value: string) => {
-        setFind(value)
         // делает студент
 
         // добавить/заменить значение в квери урла
-        // setSearchParams(
-
-        //
+        setFind(value)
+        // setSearchParams()
+        setSearchParams({ find: value })
     }
 
     useEffect(() => {
